@@ -21,13 +21,13 @@ ScreenGui.Parent = game.CoreGui
 
 main.Name = "main"
 main.Parent = ScreenGui
-main.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+main.BackgroundColor3 = Color3.fromRGB(163, 162, 165)
 main.Position = UDim2.new(0.35, 0, 0.32, 0)
-main.Size = UDim2.new(0, 400, 0, 250)
+main.Size = UDim2.new(0, 400, 0, 245)
 main.Active = true
 main.Draggable = true
-main.BorderSizePixel = 0
-main.BackgroundTransparency = 0.5
+main.BorderSizePixel = 1
+main.BackgroundTransparency = 0.6
 main.ClipsDescendants = true
  
 -- [ Suavizar Bordas ]
@@ -49,10 +49,10 @@ label.BackgroundTransparency = 0.2
 label.Size = UDim2.new(1, 0, 0, 30)
 label.Font = Enum.Font.SourceSansBold
 label.Text = "Shox Hitbox"
-label.TextColor3 = Color3.fromRGB(61, 21, 133)
+label.TextColor3 = Color3.fromRGB(196, 40, 28)
 label.TextScaled = true
 label.TextWrapped = true
-label.BorderSizePixel = 0
+label.BorderSizePixel = 1
  
 -- [ Botões - Personalização ]
 
@@ -66,7 +66,7 @@ local function createButton(name, position, text, backgroundColor, textColor)
     button.Font = Enum.Font.SourceSans
     button.Text = text
     button.TextColor3 = textColor
-    button.TextSize = 23
+    button.TextSize = 24
     button.BorderSizePixel = 1
     button.BackgroundTransparency = 0.4
  
@@ -76,24 +76,24 @@ local function createButton(name, position, text, backgroundColor, textColor)
  
 -- [ Mouse Efeito ]
 
-    button.MouseEnter:Connect(function() button.BackgroundColor3 = Color3.fromRGB(60, 19, 130) end)
+    button.MouseEnter:Connect(function() button.BackgroundColor3 = Color3.fromRGB(236, 236, 236) end)
     button.MouseLeave:Connect(function() button.BackgroundColor3 = backgroundColor end)
- 
     return button
 end
  
 -- [ Criar Botões ]
-HitboxButton = createButton("HitboxButton", UDim2.new(0.6, 0, 0.5, 0), "Hitbox", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
-MinimizeButton = createButton("MinimizeButton", UDim2.new(0.1, 0, 0.75, 0), "Minimizar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
-CloseButton = createButton("CloseButton", UDim2.new(0.6, 0, 0.75, 0), "Fechar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
-            MaximizeButton = createButton("MaximizeButton", UDim2.new(0.5, -65, 0.5, 0), "Maximizar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(52, 43, 117))
+
+HitboxButton = createButton("HitboxButton", UDim2.new(0.6, 0, 0.40, 0), "Hitbox", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
+MinimizeButton = createButton("MinimizeButton", UDim2.new(0.6, 0.1, 0.20, 0), "Minimizar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
+CloseButton = createButton("CloseButton", UDim2.new(0.6, 0, 0.60, 0), "Fechar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
+MaximizeButton = createButton("MaximizeButton", UDim2.new(0.5, -65, 0.5, 0), "Maximizar", Color3.fromRGB(242, 243, 243), Color3.fromRGB(0, 0, 0))
 MaximizeButton.Visible = false
  
 -- [ Hitbox - Configurações]
 
 HitboxSizeSlider.Name = "HitboxSizeSlider"
 HitboxSizeSlider.Parent = main
-HitboxSizeSlider.BackgroundColor3 = Color3.fromRGB(52, 43, 117)
+HitboxSizeSlider.BackgroundColor3 = Color3.fromRGB(151, 0, 0)
 HitboxSizeSlider.Position = UDim2.new(0.1, 0, 0.5, 0.9)
 HitboxSizeSlider.Size = UDim2.new(0, 115, 0, 17)
  
@@ -112,7 +112,7 @@ SliderLabel.Position = UDim2.new(0.1, 0, 0.6, 0)
 SliderLabel.Size = UDim2.new(0, 180, 0, 30)
 SliderLabel.Font = Enum.Font.SourceSansBold
 SliderLabel.Text = "Hitbox: 0"
-SliderLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SliderLabel.TextColor3 = Color3.fromRGB(236, 236, 236)
 SliderLabel.TextScaled = true
 SliderLabel.BorderSizePixel = 1
  
@@ -129,7 +129,7 @@ local TransparencyLabel = Instance.new("TextLabel")
  
 TransparencySlider.Name = "TransparencySlider"
 TransparencySlider.Parent = main
-TransparencySlider.BackgroundColor3 = Color3.fromRGB(52, 43, 117)
+TransparencySlider.BackgroundColor3 = Color3.fromRGB(151, 0, 0)
 TransparencySlider.Position = UDim2.new(0.1, 0, 0.2, 0)
 TransparencySlider.Size = UDim2.new(0, 115, 0, 17)
  
@@ -188,7 +188,7 @@ local function applyHitbox()
             local humanoidRootPart = player.Character.HumanoidRootPart
             humanoidRootPart.Size = Vector3.new(hitboxSize, hitboxSize, hitboxSize)
             humanoidRootPart.Transparency = hitboxTransparency
-            humanoidRootPart.BrickColor = BrickColor.new("Really Blue")
+            humanoidRootPart.BrickColor = BrickColor.new("Red")
             humanoidRootPart.Material = Enum.Material.Neon
             humanoidRootPart.CanCollide = false
         end
@@ -245,13 +245,13 @@ HitboxButton.MouseButton1Down:Connect(function()
     hitboxActive = not hitboxActive
     if hitboxActive then
         applyHitboxConnection = game:GetService('RunService').RenderStepped:Connect(applyHitbox)
-        HitboxButton.Text = "Hitbox On"
+        HitboxButton.Text = "Ligado"
     else
        if applyHitboxConnection then
             applyHitboxConnection:Disconnect()
             resetHitbox()
         end
-        HitboxButton.Text = "Hitbox Off"
+        HitboxButton.Text = "Desligado"
     end
 end)
  
@@ -293,4 +293,3 @@ CloseButton.MouseButton1Down:Connect(function()
     -- Destruir Gui
     ScreenGui:Destroy()
 end)
- 
